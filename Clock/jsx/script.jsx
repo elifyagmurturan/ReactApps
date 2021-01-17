@@ -1,5 +1,1 @@
-ReactDOM.render(
-    <Clock />,
-    document.getElementById('content')
-  )
-  
+ReactDOM.render(<Clock />,document.getElementById('content'))
