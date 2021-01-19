@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import PostList from './post/PostList'
 import CreatePost from './post/CreatePost'
@@ -19,7 +19,7 @@ export default function App() {
     <div style={{padding:8}}>
       <UserBar user={user} setUser={setUser}/>
       <br/>
-      user && <CreatePost user={user} posts={posts} setPosts={setPosts}/>
+      {user && <CreatePost user={user} posts={posts} setPosts={setPosts}/>}
       <br/>
       <hr/>
       <PostList posts={posts}/>

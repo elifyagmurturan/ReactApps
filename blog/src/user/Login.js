@@ -1,4 +1,4 @@
-import React, {setUser} from 'react'
+import React, {setUser, useState} from 'react'
 
 export default function Login({setUser}){
     const [username, setUsername] = useState('')
