@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-export default function CreatePost({user, posts, setPosts}){
+export default function CreatePost({user, posts, dispatch}){
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
     function handleTitle(evt){
@@ -10,8 +10,7 @@ export default function CreatePost({user, posts, setPosts}){
         setContent(evt.target.value)
     }
     function handleCreate(){
-        const newPost = {title, content, author:user}
-        setContent([newPost, ...posts])
+        dispatch({type:'CREATE_POST', title, content, author:user})
     }
     return(
         <form onSubmit={e => e.preventDefault()}>
