@@ -1,0 +1,23 @@
+{
+    "posts":   [{ "id": "post-1", "title": "A Hard Day's Night", "content": "When I am home, everything seem to be right", "author": "The Beatles" },
+{ "id": "post-2", "title": "Across The Universe", "content": "Words are flowing out ", "author":  "Paul McCartney"},
+{ "id": "post-3", "title": "All You Need Is Love", "content": "Nothing you can say but you can learn how to play the game", "author":  "Ringo Starr"},
+{ "id": "post-4", "title": "And I Love Her", "content": "I give her all my love", "author":  "George Harrison"},
+{ "id": "post-5", "title": "Blackbird", "content": "Take these broken wings and learn to fly", "author":  "John Lennon"},
+{ "id": "post-6", "title": "Eleanor Rigby", "content": "Picks up the rice in the church where a wedding has been", "author":  "Paul McCartney"},
+{ "id": "post-7", "title": "Drive My Car", "content": "Asked a girl what she wanted to be", "author":  "The Beatles"}
+],
+    "users": [
+        {"id": 1, "username": "The Beatles"},
+        {"id": 2, "username": "George Harrison"},
+        {"id": 3, "username": "Ringo Starr"},
+        {"id": 4, "username": "Paul McCartney"},
+        {"id": 5, "username": "John Lennon"}
+],
+    "themes": [
+        {"id": 1, "primaryColor": "deepbluesky", "secondaryColor": "coral"},
+        {"id": 2, "primaryColor": "orchid", "secondaryColor": "mediumseagreen"},
+        {"id": 3, "primaryColor": "darkslategray", "secondaryColor": "slategray"}
+    ]
+
+}
