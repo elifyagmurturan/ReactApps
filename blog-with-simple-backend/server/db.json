@@ -8,11 +8,11 @@
 { "id": "post-7", "title": "Drive My Car", "content": "Asked a girl what she wanted to be", "author":  "The Beatles"}
 ],
     "users": [
-        {"id": 1, "username": "The Beatles"},
-        {"id": 2, "username": "George Harrison"},
-        {"id": 3, "username": "Ringo Starr"},
-        {"id": 4, "username": "Paul McCartney"},
-        {"id": 5, "username": "John Lennon"}
+        {"id": 1, "username": "The_Beatles", "password": "notsosecure"},
+        {"id": 2, "username": "George_Harrison", "password": "notsosecure"},
+        {"id": 3, "username": "Ringo_Starr", "password": "notsosecure"},
+        {"id": 4, "username": "Paul_McCartney", "password": "notsosecure"},
+        {"id": 5, "username": "John_Lennon", "password": "notsosecure"}
 ],
     "themes": [
         {"id": 1, "primaryColor": "deepbluesky", "secondaryColor": "coral"},

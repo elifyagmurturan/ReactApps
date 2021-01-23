@@ -9,7 +9,7 @@ export default function Login () {
   const [loginFailed, setLoginFailed] = useState(false)
   const [password, setPassword] = useState('')
   const[user, login] = useResource((username, password) => ({
-    url: '/login/${encodeURI(username)}/${encodeURI(password)}',
+    url: `/login/${encodeURI(username)}/${encodeURI(password)}`,
     method: 'get'
   }))
 
@@ -26,9 +26,7 @@ export default function Login () {
       setLoginFailed(true)
     }
   }, [user])
-//   dispatch({type: 'REGISTER', username: user.data.username})
-// }
-// }, [user])
+
   function handleUsername (evt) {
     setUsername(evt.target.value)
   }
