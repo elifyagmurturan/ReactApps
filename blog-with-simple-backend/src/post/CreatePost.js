@@ -1,23 +1,30 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { StateContext } from '../contexts'
 import {useResource, userResource} from 'react-request-hook'
+import {useNavigation} from 'react-navi'
 
 export default function CreatePost () {
   const { state, dispatch } = useContext(StateContext)
   const { user } = state
-
+  
   const [ title, setTitle ] = useState('')
   const [ content, setContent ] = useState('')
+  
   const [post, createPost] = useResource(({title, content, author}) => ({
     url: '/posts',
     method: 'post',
     data: {title, content, author}
   }))
+  
+  const navigation = useNavigation()
+
   useEffect(()=> {
     if(post && post.data){
       dispatch({type: 'CREATE_POST', ...post.data})
+      navigation.navigate(`/view/${post.data.id}`)
     }
   }, [post])
+  
   function handleTitle (evt) {
     setTitle(evt.target.value)
   }

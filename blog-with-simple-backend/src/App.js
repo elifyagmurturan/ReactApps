@@ -6,6 +6,7 @@ import { ThemeContext, StateContext } from './contexts'
 import HeaderBar from './pages/HeaderBar'
 import HomePage from './pages/HomePage'
 import PostPage from './pages/PostPage'
+import FooterBar from './pages/FooterBar'
 
 const defaultPosts = [
   {title:'Please Mister Postman', content:'A new song from us!', author:'John Lennon'},
@@ -36,6 +37,7 @@ export default function App () {
                         <HeaderBar setTheme={setTheme} />
                         <hr />
                         <View />
+                        <FooterBar/>
                     </div>
                 </Router>
             </ThemeContext.Provider>
