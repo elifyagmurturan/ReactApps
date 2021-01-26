@@ -2,14 +2,17 @@ import React, { useState, useContext, useEffect } from 'react'
 import { StateContext } from '../contexts'
 import {useResource} from 'react-request-hook'
 import {useInput} from 'react-hookedup'
+import {useDispatch, useAPIRegister} from '../hooks'
 
 export default function Register () {
-    const { dispatch } = useContext(StateContext)
+    const dispatch = useDispatch()
     
     const {value: username, bindToInput: bindUsername} = useInput('')
     const {value: password, bindToInput: bindPassword} = useInput('')
     const {value: passwordRepeat, bindToInput: bindPasswordRepeat} = useInput('')
 
+    const [user, register]  = useAPIRegister()
+    
     useEffect(() => {
         if(user && user.data){
             dispatch({type: 'REGISTER', username: user.data.username})

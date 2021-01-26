@@ -2,14 +2,17 @@ import React, { useState, useContext, useEffect } from 'react'
 import { StateContext } from '../contexts'
 import {useResource, userResource} from 'react-request-hook'
 import {useInput} from 'react-hookedup'
+import {useDispatch, useAPILogin} from '../hooks'
 
 export default function Login () {
-  const { dispatch } = useContext(StateContext)
+  const dispatch = useDispatch()
   
   const {value: username, bindToInput: bindUsername} = useInput('')
   const [loginFailed, setLoginFailed] = useState(false)
   const {value: password, bindToInput: bindPassword} = useInput('')
 
+  const [user, login] = useAPILogin()
+  
   useEffect(()=> {
     if(user && user.data){
       if(user.data.length>0){
