@@ -14,11 +14,6 @@ function ThemeItem ({ theme, active, onClick }) {
   )
 }
 
-export default function ChangeTheme ({ theme, setTheme }) {
-  const [themes, getThemes] = useResource(() => ({
-    url:'/themes',
-    method: "get"
-  }))
   const {data, isLoading} = themes
   useEffect(getThemes, [])
 

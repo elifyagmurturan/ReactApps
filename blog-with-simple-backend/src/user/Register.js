@@ -10,12 +10,6 @@ export default function Register () {
     const {value: password, bindToInput: bindPassword} = useInput('')
     const {value: passwordRepeat, bindToInput: bindPasswordRepeat} = useInput('')
 
-    const [user, register] = useResource(({
-        url: '/users',
-        method: 'post',
-        data: {username, password}
-    }))
-
     useEffect(() => {
         if(user && user.data){
             dispatch({type: 'REGISTER', username: user.data.username})

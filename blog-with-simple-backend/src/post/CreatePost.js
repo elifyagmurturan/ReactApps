@@ -18,12 +18,6 @@ export default function CreatePost () {
     canRedo
   }] = useUndo('')
   const content = undoContent.present
-
-  const [post, createPost] = useResource(({title, content, author}) => ({
-    url: '/posts',
-    method: 'post',
-    data: {title, content, author}
-  }))
   
   const navigation = useNavigation()
 
