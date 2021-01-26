@@ -12,6 +12,7 @@
     "react-navi": "^0.14.4",
     "react-request-hook": "^2.1.1",
     "react-scripts": "^2.1.8",
+    "use-debounce": "^5.2.0",
     "use-undo": "^1.0.3"
   },
   "scripts": {
@@ -22,7 +23,8 @@
     "test": "react-scripts test",
     "test:nowatch": "npx concurrently --kill-others --success \"first\" \"npm run start:server\" \"npm run test:client -- --watchAll=false\"",
     "test:client": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "npx eslint src/"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -32,5 +34,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^4.2.0"
+  }
 }
