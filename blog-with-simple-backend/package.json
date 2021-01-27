@@ -3,6 +3,7 @@
     "@rehooks/window-size": "^1.0.2",
     "axios": "^0.21.1",
     "concurrently": "^4.1.0",
+    "fsevents": "^1.2.11",
     "http-proxy-middleware": "^0.19.2",
     "json-server": "^0.16.3",
     "navi": "^0.14.0",
@@ -36,6 +37,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "@testing-library/react-hooks": "^5.0.3",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "react-test-renderer": "^17.0.1"
   }
 }
