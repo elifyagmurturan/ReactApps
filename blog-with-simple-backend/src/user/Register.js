@@ -4,6 +4,14 @@ import {useResource} from 'react-request-hook'
 import {useInput} from 'react-hookedup'
 import {useDispatch, useAPIRegister} from '../hooks'
 
+function useRegisterEffect(user, dispatch){
+    useEffect(() => {
+        if(user && user.data){
+            dispatch({type:'REGISTER', username: user.data.username})
+        }
+    }, [dispatch, user])
+}
+
 export default function Register () {
     const dispatch = useDispatch()
     
@@ -12,6 +20,7 @@ export default function Register () {
     const {value: passwordRepeat, bindToInput: bindPasswordRepeat} = useInput('')
 
     const [user, register]  = useAPIRegister()
+    useRegisterEffect(user, dispatch)
     
     useEffect(() => {
         if(user && user.data){
