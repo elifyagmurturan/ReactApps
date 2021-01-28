@@ -3,8 +3,8 @@ import React from 'react'
 export default class TodoItem extends React.Component {
     constructor(props){
         super(props)
-        this.handleToggle = this.handleToggle(this)
-        this.handleRemove = this.handleRemove(this)
+        this.handleToggle = this.handleToggle.bind(this)
+        this.handleRemove = this.handleRemove.bind(this)
     }
     handleToggle() {
         const {toggleTodo, id} = this.props

@@ -4,8 +4,8 @@ export default class AddTodo extends React.Component {
     constructor(props){
         super(props)
         this.state = {input: ''}
-        this.handleInput = this.handleInput(this) 
-        this.handleAdd = this.handleAdd(this)
+        this.handleInput = this.handleInput.bind(this) 
+        this.handleAdd = this.handleAdd.bind(this)
     }
 
     handleInput(e) {
@@ -14,9 +14,9 @@ export default class AddTodo extends React.Component {
 
     handleAdd () {
         const {input} = this.state
-        const {AddTodo} = this.props
+        const {addTodo} = this.props
         if(input) {
-            AddTodo(input)
+            addTodo(input)
             this.setState({input:''})
         }
     }

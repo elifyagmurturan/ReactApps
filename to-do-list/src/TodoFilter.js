@@ -1,6 +1,9 @@
+import React from 'react'
+
 class TodoFilterItem extends React.Component {
     constructor(props){
         super(props)
+        this.handleFilter = this.handleFilter.bind(this)
     }
 
     handleFilter(){
@@ -9,7 +12,7 @@ class TodoFilterItem extends React.Component {
     }
 
     render() {
-        const {name} = this.props
+        const {name, filter = 'all'} = this.props
         const style= {
             color: 'green',
             cursor: 'pointer',

@@ -3,12 +3,11 @@ export const generateID = () => {
     return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4())
 }
 
-export const fetchAPITodos = () => {
+export const fetchAPITodos = () => 
     new Promise((resolve) => 
     setTimeout(() => resolve([
-        {id:1, title:'Do not procrastinate', completed:true},
-        {id:2, title:'Learn Flutter', completed:false},
-        {id:3, title:'Do abstract algebra hw', completed:false}
+        {id:generateID(), title:'Do not procrastinate', completed:true},
+        {id:generateID(), title:'Learn Flutter', completed:false},
+        {id: generateID(), title:'Do abstract algebra hw', completed:false}
     ]), 100)
     )
-}
