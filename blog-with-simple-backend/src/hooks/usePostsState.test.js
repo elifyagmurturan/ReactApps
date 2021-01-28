@@ -10,17 +10,21 @@ test('should use posts state', () => {
 })
 
 test('should update posts state on fetch action', () => {
-    const {result} = renderHook( () => usePostsState(), {wrapper:StateContextWrapper})
+    const {result} = renderHook( () => ({ state: usePostsState(), dispatch: useDispatch() }),
+    {wrapper:StateContextWrapper})
     const samplePosts = [{id: 'test'}, {id: 'test2'}]
+
     act(() => result.current.dispatch({
         type: 'FETCH_POSTS', posts: samplePosts}))
     expect(result.current.state).toEqual(samplePosts)
 })
 
 test('should update posts state on insert action', () => {
-    const {result} = renderHook( () => usePostsState(), {wrapper:StateContextWrapper})
+    const {result} = renderHook( () => ({state: usePostsState(), dispatch:useDispatch() }),
+    {wrapper:StateContextWrapper})
+
     const post = {title: 'Hello world', content: 'This is a test', author:'Test user'}
     act(() => result.current.dispatch({
         type: 'CREATE_POST', ...post}))
-    expect(result.current.state).toEqual(post)
+    expect(result.current.state[0]).toEqual(post)
 })
